@@ -12,7 +12,9 @@ public class TestCase {
 	}
 	
 	public void setUp(){
-		
+	}
+	
+	public void tearDown(){
 	}
 	
 	public void run() {
@@ -20,6 +22,7 @@ public class TestCase {
 			this.setUp();
 			Method method = this.getClass().getMethod(this.name);
 			method.invoke(this);
+			this.tearDown();
 		} catch (NoSuchMethodException | SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

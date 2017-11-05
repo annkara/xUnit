@@ -5,8 +5,7 @@ public class xUnit {
 	public static void main(String[] args) {
 		
 		xUnit xunit = new xUnit();
-		xunit.new TestCaseTest("testRunning").run();
-		xunit.new TestCaseTest("testSetUp").run();
+		xunit.new TestCaseTest("testTemplateMethod").run();
 	}
 	
 	class TestCaseTest extends TestCase{
@@ -17,18 +16,10 @@ public class xUnit {
 			super(name);
 		}
 		
-		public void setUp() {
+		public void testTemplateMethod() {
 			this.test = new WasRun("testMethod");
-		}
-
-		public void testRunning() {
 			this.test.run();
-			assert(test.wasRun);
-		}
-		
-		public void testSetUp() {
-			this.test.run();
-			assert(test.wasSetUp);
+			assert("setUp testMethod tearDown".equals(test.log));
 		}
 	}
 }
