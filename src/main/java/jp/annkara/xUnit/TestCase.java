@@ -10,11 +10,9 @@ public class TestCase {
 		this.name = name;
 	}
 	
-	public void setUp(){
-	}
+	public void setUp(){}
 	
-	public void tearDown(){
-	}
+	public void tearDown(){}
 	
 	public TestResult run() {
 		TestResult result = new TestResult();
