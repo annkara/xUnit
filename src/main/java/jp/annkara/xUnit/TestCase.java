@@ -11,8 +11,13 @@ public class TestCase {
 		this.name = name;
 	}
 	
+	public void setUp(){
+		
+	}
+	
 	public void run() {
 		try {
+			this.setUp();
 			Method method = this.getClass().getMethod(this.name);
 			method.invoke(this);
 		} catch (NoSuchMethodException | SecurityException e) {
