@@ -17,8 +17,10 @@ public class TestCase {
 	public void tearDown(){
 	}
 	
-	public void run() {
+	public TestResult run() {
+		TestResult result = new TestResult();
 		try {
+			result.testStarted();
 			this.setUp();
 			Method method = this.getClass().getMethod(this.name);
 			method.invoke(this);
@@ -36,6 +38,7 @@ public class TestCase {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return result;
 	}
 
 }
