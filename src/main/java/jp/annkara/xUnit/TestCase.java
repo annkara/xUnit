@@ -14,8 +14,7 @@ public class TestCase {
 	
 	public void tearDown(){}
 	
-	public TestResult run() {
-		TestResult result = new TestResult();
+	public void run(TestResult result) {
 		try {
 			result.testStarted();
 			this.setUp();
@@ -25,7 +24,5 @@ public class TestCase {
 			result.testFailed();
 		}
 		this.tearDown();
-		return result;
 	}
-
 }
